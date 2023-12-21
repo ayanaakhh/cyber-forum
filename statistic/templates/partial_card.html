@@ -1,0 +1,10 @@
+
+<div class="card">
+    <img src="{{ game.logo.url }}" alt="{{ game.title }} Logo" class="card-img-top" style="max-height: 200px; object-fit: contain;">
+    <div class="card-body">
+        <h5 class="card-title">{{ game.title }}</h5>
+        <p class="card-text"><strong>Платформа:</strong> {{ game.get_platforms_display }}</p>
+        <a href="{% url 'teams-statistics' game.id %}" class="btn btn-outline-primary">статистика комманд</a>
+        <a href="{% url 'players-statistics' game.id %}" class="btn btn-outline-warning">статистика игроков</a>
+    </div>
+</div>

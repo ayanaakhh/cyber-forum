@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Рейтинг игроков по игре "{{ game.title }}"</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Имя</th>
+                <th scope="col">Аватар</th>
+                <th scope="col">Дисциплина</th>
+                <th scope="col">Команда</th>
+                <th scope="col">Регион</th>
+                <th scope="col">Общие призовые</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for player in players %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ player.username }}</td>
+                    <td><img style="max-width: 100px" src="{{ player.avatar.url }}"></td>
+                    <td>{{ player.game.title }}</td>
+                    <td>{{ player.team.title }}</td>
+                    <td>{{ player.region }}</td>
+                    <td>{{ player.total_prize }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

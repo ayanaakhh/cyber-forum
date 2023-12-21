@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cyber Forum</title>
+	<link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/cyborg/bootstrap.min.css">
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'posts' %}">
+      <img style="max-width: 50px" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxIREhMSExIWFRUSFRIVFxUVFhcVEhUVFRUWFhUXFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGi0lHyUtLS0tLS0tKy0rLS0tKy0tLS0tLS0tLS0tLy0yLS0tLS0tLS0rLS0tLS0tLS0tLS0tLf/AABEIAOEA4QMBEQACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAAAwUCBAYBB//EADkQAAIBAgQDBQYEBAcAAAAAAAABAgMRBAUhMRJBUQYiYXGBE1KhscHRIzJCkTNicvAUQ4KS0uHx/8QAGgEBAAIDAQAAAAAAAAAAAAAAAAEDAgQFBv/EADIRAQACAgEDAwMCBAUFAAAAAAABAgMRBBIhMQVBURQiMhNxIzNhkUJS0fDxFYGhseH/2gAMAwEAAhEDEQA/APhoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJKdFy2Im0QzpjtbwkWEl8bGPXCyOPceDmuQ/UqTxskezx4SfQdcI+nv8MZ0JLkTFoljbFevmGPsn0ZO4R0W+GzSwLa10K5yQ2KcWZjuzngengRGRnbifD2WBXJiMhbiR7S1qmHcbN7PoZxbfhRfDNO9vBh8PxX5WFraMWGcm0ssF4kfqLJ4uvdG8KyeuFc4LPf8JLwHXCfp7Mf8JLoOuGP090dSm47mUTEq7Ums92BLEAAAAAAAAAAAAABYZdqmujRTkb/EncTCwSKW/p5YI08cQiYecJO0aZRiQyiBIER3ZNBlpg0SxmGMqae6ETpjNItHeHkYW2J2RWI8DQRMMGiWMw9SCACDGLuP0+ZlTyoz/hKtL3PAAAAAAAAAAAAAAWGV/q9CnL7N7h+6wSKXQe2ITp6gPLA09QS8t0CNfDPh0I2z6ezxxJ2jpeNBEwwkiWMwxsTCGNiWOtvAx0MlEoMYu4/CxlTy188bpKsL3PAAAAAAAAAAAAAAWeVx7rfiUZZ7ulwq/bMrGxQ39dlLjXNO0m/DobVOmY3Dj8j9SttWlHQxMoPR+j2MrViVePNfHO4lcYPExqbaP3X9DWvSaurg5Fcn7/DadO5VttdOxRSJ2nUQzSIZaYyQhEw18ZXUFdpu99vqWUr1Soz5YxV3MbVlXMW9kl8S+MUe7m35tp8Q154mb/U/TQzisQ17Zr28ymwuLd7PW/PmY3pHmF+DkWiem3dYFDfl5JEwwlFil3ZeRlTzCrN+Eqk2HMAAAAAAAAAAAAAAW+VvuerNfL5dXh/g3kUt2GGIw6mrP0fQmtprLDLhrkrqVFiKDg7P/wBNutotG4cTLitjt02YU5uLTWjRMxvswraazuFxg82T0qafzL6o174P8rqYOfHjJ/dZxSdmndPZmvPZ1K6tG47jjYbTrRwg0xlTTTT1RMSxtSJjUqfH5Y496Oq6dDZx5t9pcjk8Ga/dTwrC9zk2EhecV4mN51WV2CvVkiFy0arrzDxhjMNfFvuSLKfkoz/y5VJsOWAAAAAAAAAAAAAAt8od4tdH8zWzR326nAndZhv2Km+lgjGVkMMRhVUi4vfk+jJreazuGGbBXNXplzmJoOEnF8vibtbRaNw8/lxWx26bIjJW2cHjZUndbc09mYXpFo7r8HIvhndf7OjwONhW20fuvf06o0r47Ud/jcvHnjXifhsezMNtrpYcBO2HSwkiWEwrsdlylrHR/Bl1Msx2lz+Tw4v91e0tPLsM1Ud1smW5LxNezV4mG1cs9UeFlJGvDoWYSRkwmGljqkVFxvrpoW44ne2lyclYrNfdWF7ngAAAAAAAAAAAAALPJW+KXTh+uhRm8OhwNzef2XCjc1nXiNs4wI2siqaMTFnEIsZl0aqttJbPoZUyzSVWfiVz117uVxFCVOTjJWaN+totG4eay4rY7TW0d0Rkrexk07p2a5rcJiZidwvsuzzaNX/f/wAkauTj+9XY4vqevty/3/1XSimrqzT2f/Zqd47S7ETFo3VhKBO0TVDKJltXMI5RJ2rmPdDJGUKphE0ZKphUZhNueqtZWXl1NrHEdLk8mZnJ3apm1wAAAAAAAAAAAAAFjktZKbi/1KyfitinNWZrtu8HJFcmp917FGo7sQlgYyshNTMZZw2KcFfx+BjMrI87a2ZZVGtHXSS2f38CzHmmkqOVwq8ivftPy4zEUXCTjJWaZ0q2i0bh5TJjtjtNbeYREsADdy7Mp0XprHnF7enQryYq38trj8vJgn7fHw6bA42FZd1684vdfc0b47U8vQcflY88dvPwznAxiV0whkjJVaOyGSMoUyiqGUK7K3NYaJ223fMvwz7Odza9olWF7ngAAAAAAAAAAAAALbJcKpd7nFo1815js6XAwReeufaV5wmrt24hJGJDOISOPwMWWm5hpq2phaF1NNhU7ox2tiu1bnOSe2Ta0nFOz6+DL8Ofon+jQ5vAjkV3H5R4cNWpODcZKzW6OlExMbh5O9LUtNbR3YEsQDKnNxaadmtmtxMbTW01ncL/AC/PE+7V0fvcvVcjUycf3q7PG9S/w5f7/wCq1mly1v8Asa3f3dOdTHZBOmZRKuatepAziVVoVub6RivH0L8PmXN534xCqNhzQAAAAAAAAAAAAAHQdm13Z/1L5GpyfMOz6X+Nv3XXCarsxDLhDPXZ5Qqqabi78L4XbdNdSbVmvlVjy0yb6Z8TpPwMwX6b2FdlqYWXU7R3TqZGlm1Tn+SRrxcoq1RJWfW3Jl+DPNJ1PhzufwK8is2r+Tg8RQcJOLWq8LeZ062iY3DyWTHak6lESwAAG/gc0lT0snHp9iq+KLNvBy74u0ePheUMVGquKL81zRq2pNOzs4eRTNG4nv8AD2SIZzCuzGgnFyd7paau37F2O0700OXhrNJvPlSG044AAAAAAAAAAAAAC1yHGuEuDhTVRrV3vFrmijPSJjfw3+BntTJ0R7uqpxNB6SqLNK/sqUp87WXm9EZYq9VohXys36OG1vf2/dx+Ax06MuKL33T2kvE6N6RaNS8thz3xX6qy7bK8XCtFSg/Bxe8X4nNy45pOpeq4nKpnruPPws+DUpb6RQsE60yitGQyhS5/kqrq6dpxTt0fgzZw5v0517OZ6hwI5EbjtaHBVIOLae6bT9DpRO428las1mYliSxAAGdKbi04tp+BExE+WVZmJ3Xy6yxz3qNdmnmUfw5eX1RZj/KGpy4/hWc4brgAAAAAAAAAAAAAAN/JI3rQ9fkyrNP2S2+DG89XZU4nNl6mrnu1eMvKNJfo1f8AU9vh8zc4tNRNnD9Xz9V4xx7d/wDu5823HbOAxs6M1OD15rk10ZjekXjUrcOa+G8XpPd9ByfMIYiKlHRr80eaf98zlZcU457vX8LmU5Fdx594WK6FTeJMEvIq5MoUnajs57VOrTVqi3Xvr7mxx+R0z028OT6n6bGWP1Mf5f8Av/64GSs7PdHTeVmNdpeBABtZZR46sV43fktSvLbprMtniY+vNWHUyRoQ9JPdpZmvwp+X1LcX5Q0+ZH8GzmTeeeAAAAAAAAAAAAAAdB2XoJqUmrtOy8NDU5Npjs7PpWKsxN5jvEukijSdyHOZ/k8+KVWPeT1a5r7o3cGaNdMuH6hwb9U5a99+XPG24wBuZXXq06ilSu5Lkk2mujXQwyVraNWX8e+Sl4tj8vo2AxUqkIylBwfOL3TW/ocm9YrOol7Pj5L3xxa8an4bVrq/qYL0lOOhEsoSWIHI9rMhUr1qa7y1lFfqXVeJu8bka+23hwfVPT+uJy4/PvHy4po6LzTwDouzeD7sqjW/dXkt3/fQ0+Tfv0u36Xg+2ck+/aFtKJruq0M3X4U/L6otwz98NLmx/Bs5Y33nAAAAAAAAAAAAAAHS9lX3Z/1L5GlyvMO76RP22j+roos1HZhLFGLOFVjuz1Oq3Jd1ve23nbqbFORasalz+R6Xiy26o7S9wfZajHWV5vx2/ZC3KvPjsYvSMFPy7rvDYaEEuGKSXRWNe1pnzLp48VKRqsaTPQxWpIIiUwlgyElWQhEoKiJYyqMXlNGbbdON3ztqXVzXjxLRycPBedzWGnPIsP7nxZZ9Rk+VE+m8f/K2adJRjwxVktkjCZ3O5bFaRWNR4RVETCNK/OP4M/L6luH84aXO/kWcmdB5oAAAAAAAAAAAAAB0vZOPdqPxj8jS5XmHd9Ij7bT+zoadn8jUl2dpoaaGLOISpEM4SQDJmQlmgmGUWQmJRzmTpEyylO2xGkzPZC5mWlcyilKxOmO0E2TCuZRWJYIKpnDGVdm/8Gfkvmi3D+cNLm/yLOTOg80AAAAAAAAAAAAAAsMuzepRTjFrhbbaaWrtbffoVXxVv3ls4OVkw/jPZvvtRPhsqcVL3tevu+WhX9LXfltT6rl6dRED7U1Ne5FXtbfSzu997rQfS1J9VzPIdqKyilZN63k93dNLTw0/YTxaTO0R6pniuktXtbVafDCMXaye7Tsrvpvf9yI4lPdlb1bNMajs9wna6pH88FPvX3t3bflWnXmLcSs+GWL1fNXz37/7hbZT2mjXq8DhwcStHvcV5dNluUZeN0V3E7b3E9W/Vy9N41E+P3WVTNqKcoudnBqMnZ8MW9tSmMN5jem7b1HDFpjfjs8njqdnLiTSck2nezW9x+lb4TbnYdb38tJ9o8Kv8xv/AES+xb9Nka3/AFfB/V7is7pws3s776S0Sf5fUivHtKMnqlK6n/lp4rtTQV+CM5vldKMX8b/AsrxLe8tfJ6xT/DVBHtTSaV6U1Lmk1w+jepl9JO+0q49XjXevdsrPcM1f2kl/LwO/2+Jh9NdfHqmHW+6mxXaGpf8ADnJLkpKFrdLJamxXBXXeHLyc/JNt1tP/AIR1879pSlCcFxNaSjovWP2JjBFbRMSm3PtfFNLx591OXueAAAAAAAAAAAAAAAAAAAAA9TsAbA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/9k=" alt="Cyber Forum Logo" class="img-fluid">
+    </a>    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'posts' %}">Home
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'games' %}">Statistics</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'news' %}">News</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="{% url 'tournaments-list' %}">Tournaments</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about_us' %}">About us</a>
+        </li>
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" style="color: green" href="{% url 'post-create' %}">Add post</a>
+          </li>
+          {% endif %}
+      </ul>
+        <div class="nav-item">
+            {% if user.is_authenticated %}
+                <button class="btn btn-outline-warning nav-link" onclick="location.href='{% url 'account_email' %}'">{{ user.email }}</button>
+            </div>
+            <div class="nav-item" style="margin-left: 10px;">
+                <button class="btn btn-outline-danger nav-link" onclick="location.href='{% url 'account_logout' %}'">Logout</button>
+            {% else %}
+                <button class="btn btn-outline-primary nav-link" onclick="location.href='{% url 'account_login' %}'">Login</button>
+            {% endif %}
+        </div>
+    </div>
+  </div>
+</nav>
+
+<p></p>
+<div class="container">
+    {% block page_content %}{% endblock %}
+</div>{% block content %}
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+{% if objects %}
+{% for object in objects %}
+    <h1>{{ object.title }}</h1>
+    <p>{{ object.text|safe }}</p>
+{% endfor %}
+{% endif %}
+{% endblock %}

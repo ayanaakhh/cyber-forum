@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for game in games %}
+    <div class="container mt-5">
+        <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    {% include 'partial_card.html' %}
+                </div>
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}

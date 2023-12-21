@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="container mt-5">
+    <h1 class="mb-4">News</h1>
+
+    {% if news %}
+      <div class="row row-cols-1 row-cols-md-2 g-3">
+        {% for item in news %}
+          <div class="col">
+            <div class="card h-100">
+              {% if item.image %}
+                <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.title }}" style="object-fit: cover; height: 200px;">
+              {% else %}
+                <img src="https://via.placeholder.com/500x300/258DC8/E0F6FD" class="card-img-top" alt="{{ item.title }}" style="object-fit: cover; height: 200px;">
+              {% endif %}
+              <div class="card-body">
+                <h5 class="card-title">{{ item.title }}</h5>
+                <p class="card-text">{{ item.text|truncatechars:200|safe }}</p>
+                <p class="card-text"><small class="text-muted">{{ item.created_at|date:"F d, Y H:i" }}</small></p>
+                <a href="{% url 'news_detail' pk=item.pk %}" class="btn btn-primary">Read More</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>No news available.</p>
+    {% endif %}
+  </div>
+{% endblock %}

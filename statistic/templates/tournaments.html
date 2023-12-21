@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h2 class="mt-3">Tournaments</h2>
+    <div class="row">
+      {% for tournament in tournaments %}
+        {% if tournament.is_active %}
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <img
+                src="{% if tournament.image %}{{ tournament.image.url }}{% else %}https://via.placeholder.com/500x300/258DC8/E0F6FD{% endif %}"
+                alt="{{ tournament.title }}"
+                class="card-img-top img-fluid"
+                style="max-height: 200px; object-fit: cover;"
+                onerror="this.onerror=null; this.src='https://via.placeholder.com/500x300/258DC8/E0F6FD';"
+              >
+              <div class="card-body">
+                <h5 class="card-title mb-2">
+                  <a href="{% url 'tournament-detail' pk=tournament.pk %}" class="text-dark">{{ tournament.title }}</a>
+                </h5>
+                <p class="card-text text-muted small">{{ tournament.event_date }}</p>
+                <span class="badge bg-success">Active</span>
+                <span class="badge bg-info">Prize Fund: ${{ tournament.prize_fond }}</span>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block page_content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card border-info" style="max-width: 40rem; margin: 20px auto;">
+                <div class="card-header">{{ post.created_at }}</div>
+                <div class="card-body">
+                    <h4 class="card-title">{{ post.title }}</h4>
+                    <p class="card-text">{{ post.text|safe }}</p>
+                    <p class="card-text"><strong>Автор:</strong> {{ post.author }}</p>
+                </div>
+                {% if user.is_authenticated %}
+                    {% if user == post.author %}
+                        <div class="card-footer">
+                            <a href="{% url 'post-update' pk=post.pk %}" class="btn btn-warning">Изменить</a>
+                            <a href="{% url 'post-delete' pk=post.pk %}" class="btn btn-danger">Удалить</a>
+                        </div>
+                    {% endif %}
+                {% endif %}
+            </div>
+            <div>
+            {% if user.is_authenticated %}
+                 <form method="post">
+                    {% csrf_token %}
+                    {{ comment_form.as_p }}
+                    <button type="submit" class="btn btn-primary mt-2">Submit</button>
+                  </form>
+            {% endif %}
+
+            <!-- Отображение комментариев -->
+            <h5>Комментарии:</h5>
+            {% for comment in post.comments.all %}
+                <div class="card mb-2">
+                    <div class="card-body">
+                        {{ comment.text }}
+                        <p class="small text-muted">Автор: {{ comment.author }} | Дата: {{ comment.created_at }}</p>
+                        {% if user.is_authenticated and user == comment.author %}
+                            <a href="{% url 'comment-update' pk=comment.pk %}" methods="post" class="btn btn-warning btn-sm">Изменить</a>
+                            <a href="{% url 'comment-delete' pk=comment.pk %}" methods="delete" class="btn btn-danger btn-sm">Удалить</a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
