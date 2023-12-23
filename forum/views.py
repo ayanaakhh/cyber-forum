@@ -106,7 +106,7 @@ class NewsDetailView(generic.DetailView):
 
 
 class CommentUpdateView(LoginRequiredMixin, View):
-    template_name = "comment_update.html"  # Создайте шаблон для редактирования комментария
+    template_name = "comment_update.html"
 
     def get(self, request, pk):
         comment = self.get_object(pk)
